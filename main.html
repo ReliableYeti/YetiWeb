@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A basic starting template for a website">
+    <title>My Website</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0; /* Remove default body margin */
+            padding: 0;
+            line-height: 1.6;
+            background-color: #444;
+            color: #fff;
+        }
+        header {
+            background: url('header_BG.png') no-repeat center bottom/cover;
+            color: #ffffff;
+            padding: 1rem 0;
+            text-align: center;
+            height: 20vh;
+        }
+        header h1 {
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #000000;
+            padding: 0.5rem;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        nav a:hover {
+            transform: scale(1.2);
+            animation: glitch 0.3s linear;
+            color: #0ac0f3;
+        }
+        @keyframes glitch {
+            0% {
+                text-shadow: 2px 2px rgb(222, 21, 229), -2px -2px rgb(0, 0, 0);
+            }
+            25% {
+                text-shadow: -2px 2px rgb(0, 0, 0), 2px -2px rgb(0, 0, 0);
+            }
+            50% {
+                text-shadow: 2px -2px rgb(255, 255, 255), -2px 2px rgb(0, 0, 0);
+            }
+            75% {
+                text-shadow: -2px -2px rgb(55, 53, 55), 2px 2px rgb(0, 0, 0);
+            }
+            100% {
+                text-shadow: 2px 2px rgb(7, 192, 243), -2px -2px rgb(215, 10, 215);
+            }
+        }
+        .container {
+            display: flex;
+            width: 100%; /* Stretch the container to the full width */
+            max-width: none; /* Disable max-width to prevent centering */
+            margin: 0; /* Remove any additional margins */
+            padding: 1rem; /* Keep padding for internal spacing */
+            gap: 2rem;
+        }
+        .left-section {
+            flex: 1.5;
+        }
+        .right-section {
+            flex: 1;
+            background-color: #333;
+            padding: 1.5rem;
+            border-left: 2px solid #555;
+            box-sizing: border-box; /* Ensure padding doesn't exceed its flex space */
+            border-radius: 10px;
+        }
+        .right-section h2 {
+            color: #0ac0f3;
+            margin-top: 0;
+        }
+        .right-section .update-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 1.5rem;
+            background: #474747;
+            border-radius: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .right-section .update-item img {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        .project {
+            background: #333;
+            border: 1px solid #555;
+            border-radius: 10px;
+            padding: 1.3rem;
+            width: 220px;
+            text-align: center;
+            box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
+        }
+        .project img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: .2rem;
+        }
+        .project h3 {
+            margin: 0.2rem 0;
+            color: #ffffff;
+        }
+        .project p {
+            font-size: 0.9rem;
+            color: #ccc;
+            margin-bottom: .5rem;
+        }
+        .project button {
+            background: #0ac0f3;
+            color: #000;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .project button:hover {
+            background: #ffffff;
+            animation: glitch 0.5s linear;
+        }
+        .scroll-box {
+            background-color: #333; /* Match the theme */
+            border: 1px solid #555;
+            padding: 1rem;
+            margin-top: 1rem;
+            height: 200px; /* Fixed height for scroll box */
+            overflow-y: auto; /* Enable vertical scrolling */
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .scroll-box::-webkit-scrollbar {
+            width: 10px; /* Width of the scrollbar */
+        }
+        .scroll-box::-webkit-scrollbar-track {
+            background: #444; /* Scrollbar track color */
+            border-radius: 10px;
+        }
+        .scroll-box::-webkit-scrollbar-thumb {
+            background: #0ac0f3; /* Scrollbar thumb color */
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: #333;
+            color: #fff;
+            margin-top: 2rem;
+        }
+        /* Dropdown container */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Dropdown content (hidden by default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #000000;
+            min-width: 160px;
+            z-index: 1;
+            border-radius: 5px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Style links inside the dropdown */
+        .dropdown-content a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 0.5rem 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Change link color on hover */
+        .dropdown-content a:hover {
+            /*background-color: #0ac0f3; */
+            color: #18d5ea;
+        }
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Dropdown animation */
+        .dropdown-content {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1></h1>
+    </header>
+    <nav>
+        
+        <a href="#">Home</a>
+        <a href="about.html">About</a>
+
+        <div class="dropdown">
+            <a href="#">Topics</a>
+            <div class="dropdown-content">
+                <a href="#topic1">Python</a>
+                <a href="#topic2">Networking</a>
+                <a href="#topic3">Forensics</a>
+                <a href="#topic4">Windows</a>
+                <a href="#topic5">Linux</a>
+                <a href="#topic6">Mac</a>
+            
+            </div>
+        </div>
+
+        <a href="#">Projects</a>
+        <a href="#">Websites</a>
+        <a href="#">Books</a>
+
+        <div class="dropdown">
+            <a href="#">Music</a>
+            <div class="dropdown-content">
+                <a href="#topic1">Ableton</a>
+                <a href="#topic2">Rock Demos</a>
+                <a href="#topic3">Elec Demos</a>
+            
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <!-- Left Section -->
+        <div class="left-section">
+            
+            <section class="projects">
+                <div class="project">
+                    <img src="icon_1.png" alt="Project Icon">
+                    <h3>Pygame Shooter</h3>
+                    <p>A brief description of the project goes here.</p>
+                    <button>Read More</button>
+                </div>
+                <div class="project">
+                    <img src="icon_2.png" alt="Project Icon">
+                    <h3>Raspberry Pi Pico</h3>
+                    <p>A brief description of the project goes here.</p>
+                    <button>Read More</button>
+                </div>
+                <div class="project">
+                    <img src="icon_3.png" alt="Project Icon">
+                    <h3>API in Web Dev</h3>
+                    <p>A brief description of the project goes here.</p>
+                    <button>Read More</button>
+                </div>
+            </section>
+            <section>
+                <h2>Scrollable Section</h2>
+                <div class="scroll-box">
+                    <p>Item 1: Some interesting content goes here.</p>
+                    <p>Item 2: Some interesting content goes here.</p>
+                    <p>Item 3: Some interesting content goes here.</p>
+                    <p>Item 4: Some interesting content goes here.</p>
+                    <p>Item 5: Some interesting content goes here.</p>
+                    <p>Item 6: Some interesting content goes here.</p>
+                    <p>Item 7: Some interesting content goes here.</p>
+                    <p>Item 8: Some interesting content goes here.</p>
+                    <p>Item 9: Some interesting content goes here.</p>
+                    <p>Item 10: Some interesting content goes here.</p>
+                </div>
+            </section>
+        
+        </div>
+
+        <!-- Right Section -->
+        <div class="right-section">
+            <h2>Recent Updates</h2>
+            <div class="update-item">
+                <img src="movie.png" alt="The Matrix">
+                <div>
+                    <strong>Last Movie Watched:</strong> Oddity
+                </div>
+            </div>
+            <div class="update-item">
+                <img src="book.png" alt="The Shining">
+                <div>
+                    <strong>Last Book Read:</strong> Dark Matter by Blake Crouch
+                </div>
+            </div>
+            <div class="update-item">
+                <strong>Latest Activity:</strong> Completed Python Game Development Project
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>
