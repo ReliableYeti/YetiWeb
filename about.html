@@ -89,14 +89,34 @@
             margin-bottom: 1rem;
             padding: 1.5rem;
             background: #474747;
-            border-radius: 15px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
         }
         .right-section .update-item img {
-            width: 80px;
-            height: 80px;
+            width: 300px;
+            height: 200px;
             border-radius: 10px;
             object-fit: cover;
+        }
+        .fav-movie {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 1.5rem;
+            background: #474747;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+        }
+        .fav-movie-img {
+            width: auto; /* Custom width */
+            height: auto; /* Adjust height proportionally */
+            border-radius: 1px; /* Optional styling */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .fav-movie-img:hover {
+            
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Add a shadow on hover */
         }
         .projects {
             display: flex;
@@ -110,13 +130,13 @@
             border: 1px solid #555;
             border-radius: 10px;
             padding: 1.3rem;
-            width: 220px;
+            width: 250px;
             text-align: center;
             box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
         }
         .project img {
-            width: 100px;
-            height: 100px;
+            width: 235px;
+            height: 200px;
             margin-bottom: .2rem;
         }
         .project h3 {
@@ -231,7 +251,7 @@
     </header>
     <nav>
         
-        <a href="#">Home</a>
+        <a href="index.html">Home</a>
         <a href="about.html">About</a>
 
         <div class="dropdown">
@@ -267,59 +287,78 @@
             
             <section class="projects">
                 <div class="project">
-                    <img src="icon_1.png" alt="Project Icon">
-                    <h3>Pygame Shooter</h3>
-                    <p>A brief description of the project goes here.</p>
-                    <button>Read More</button>
+                    <img src="me.png" alt="Project Icon">
+                    <h3>Lindsay Saunders</h3>
+                    <p>From Westerly, RI</p>
+                    <p>Currently live in Las Cruces, NM</p>
+                    
                 </div>
                 <div class="project">
-                    <img src="icon_2.png" alt="Project Icon">
-                    <h3>Raspberry Pi Pico</h3>
+                    <img src="libra.png" alt="Project Icon">
+                    <h3>September Libra</h3>
                     <p>A brief description of the project goes here.</p>
-                    <button>Read More</button>
+                    
                 </div>
-                <div class="project">
-                    <img src="icon_3.png" alt="Project Icon">
-                    <h3>API in Web Dev</h3>
-                    <p>A brief description of the project goes here.</p>
-                    <button>Read More</button>
-                </div>
+                
             </section>
             <section>
-                <h2>Scrollable Section</h2>
+                <h2>About Me</h2>
                 <div class="scroll-box">
-                    <p>Item 1: Some interesting content goes here.</p>
-                    <p>Item 2: Some interesting content goes here.</p>
-                    <p>Item 3: Some interesting content goes here.</p>
-                    <p>Item 4: Some interesting content goes here.</p>
-                    <p>Item 5: Some interesting content goes here.</p>
-                    <p>Item 6: Some interesting content goes here.</p>
-                    <p>Item 7: Some interesting content goes here.</p>
-                    <p>Item 8: Some interesting content goes here.</p>
-                    <p>Item 9: Some interesting content goes here.</p>
-                    <p>Item 10: Some interesting content goes here.</p>
+                    <p>Lindsay Saunders<br><br>
+                
+                        Information & Communication Technologies<br> 
+                        New Mexico State University<br><br>
+                        
+                        Lindsay graduated from New Mexico State University in 2024 with a Bachelor of Engineering in Information Communication Technology and previously earned a Bachelor of Science in Communication Information Systems from Central New Mexico College in 2022.<br><br> 
+                        
+                        
+                        Education<br>
+                        Bachelor of Engineering<br>
+                        Major Information Communication Technology<br>
+                        New Mexico State University, 2024<br><br>
+                        
+                        Bachelor of Science<br>
+                        Major Communication Information Systems<br>
+                        Central New Mexico College, 2022<br><br>
+                        
+                        Certifications<br><br>
+                        
+                        CompTIA A+<br>
+                        Networking +<br>
+                        Security +<br>
+                        Linux +<br>
+                        </p>
                 </div>
             </section>
-        
         </div>
 
         <!-- Right Section -->
         <div class="right-section">
-            <h2>Recent Updates</h2>
+            <h2>Hobbies</h2>
             <div class="update-item">
-                <img src="movie.png" alt="The Matrix">
+                <img src="ableton.png" alt="The Matrix">
                 <div>
-                    <strong>Last Movie Watched:</strong> Oddity
+                    <strong>Music Production:</strong> 
+                    <p>Guitar is my main instrument</p>
+                    <p>Decent with the piano</p>
                 </div>
             </div>
             <div class="update-item">
-                <img src="book.png" alt="The Shining">
+                <img src="programming.png" alt="The Shining">
                 <div>
-                    <strong>Last Book Read:</strong> Dark Matter by Blake Crouch
+                    <strong>Programming:</strong> 
+                    <p>Game Development:</p>
+                    <p>-Python</p>
+                    <p>-GML</p>
                 </div>
             </div>
+            <div class="fav-movie"> 
+                <a href="https://letterboxd.com/reliableyeti/" target="_blank">
+                    <img class="fav-movie-img" src="fav_movie.png" alt="Favorite Movie">
+                </a>
+            </div>
             <div class="update-item">
-                <strong>Latest Activity:</strong> Completed Python Game Development Project
+                <strong>Fav Book:</strong> Completed Python Game Development Project
             </div>
         </div>
     </div>
