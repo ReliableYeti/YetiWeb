@@ -170,7 +170,7 @@
             overflow-y: auto; /* Enable vertical scrolling */
             border-radius: 10px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-            margin-bottom: 20px;
+            
         }
         .scroll-box::-webkit-scrollbar {
             width: 10px; /* Width of the scrollbar */
@@ -183,8 +183,24 @@
             background: #0ac0f3; /* Scrollbar thumb color */
             border-radius: 10px;
         }
+        iframe {
+            visibility: hidden;
+            width: 862px;
+            height: 200px;
+            border: black; /* Removes iframe borders */
+            display: block; /* Prevents iframe resizing inconsistencies */
+            margin: 0 auto; /* Centers the iframe */
+        }   
+        .iframe-container {
+            width: 862px;
+            height: 200px;
+            overflow: hidden; /* Ensures content stays contained */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
         .game-section {
-            margin-top: 80px; /* Ensures separation from the scroll-box above */
+            margin-top: 10px; /* Ensures separation from the scroll-box above */
         }
         footer {
             text-align: center;
@@ -333,12 +349,15 @@
                         </p>
                 </div>
             </section>
-
-            <div class="game-section">
-                <section>
-                    <iframe src="https://reliableyeti.github.io/YetiWeb/build/web/index.html" width="862" height="200" scrolling="no" tabindex="-1"></iframe> 
-                </section>
+            <div class="iframe-container">
+                <iframe src="https://reliableyeti.github.io/YetiWeb/build/web/index.html" 
+                        width="862" 
+                        height="200" 
+                        scrolling="no" 
+                        tabindex="-1">
+                </iframe>   
             </div>
+            
         </div>
 
         <!-- Right Section -->
@@ -374,5 +393,14 @@
     <footer>
         <p>&copy; 2024 My Website. All rights reserved.</p>
     </footer>
+    <script>
+        window.addEventListener('load', function () {
+            const iframe = document.querySelector('iframe');
+            setTimeout(() => {
+                iframe.style.visibility = 'visible';
+            }, 100); // Adjust delay as needed
+        });
+    </script>
+    
 </body>
 </html>
