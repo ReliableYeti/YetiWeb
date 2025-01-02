@@ -170,6 +170,7 @@
             overflow-y: auto; /* Enable vertical scrolling */
             border-radius: 10px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
         }
         .scroll-box::-webkit-scrollbar {
             width: 10px; /* Width of the scrollbar */
@@ -182,7 +183,9 @@
             background: #0ac0f3; /* Scrollbar thumb color */
             border-radius: 10px;
         }
-
+        .game-section {
+            margin-top: 20px; /* Ensures separation from the scroll-box above */
+        }
         footer {
             text-align: center;
             padding: 1rem 0;
@@ -330,10 +333,10 @@
                         </p>
                 </div>
             </section>
-            <div>
+
+            <div class="game-section">
                 <section>
-                    <iframe src="https://reliableyeti.github.io/YetiWeb/build/web/index.html" width="500" height="300"></iframe> 
-                
+                    <iframe src="https://reliableyeti.github.io/YetiWeb/build/web/index.html" width="862" height="200"></iframe> 
                 </section>
             </div>
         </div>
