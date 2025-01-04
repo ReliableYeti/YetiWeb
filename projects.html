@@ -69,7 +69,7 @@
             gap: 2rem;
         }
         .left-section {
-            flex: 1.5;
+            flex: .5;
         }
         .right-section {
             flex: 1;
@@ -78,6 +78,8 @@
             border-left: 2px solid #555;
             box-sizing: border-box; /* Ensure padding doesn't exceed its flex space */
             border-radius: 10px;
+            margin: 0;
+            
         }
         .right-section h2 {
             color: #0ac0f3;
@@ -89,65 +91,24 @@
             margin-bottom: 1rem;
             padding: 1.5rem;
             background: #474747;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
         .right-section .update-item img {
-            width: 300px;
-            height: 200px;
+            width: 80px;
+            height: 80px;
             border-radius: 10px;
             object-fit: cover;
         }
-        .fav-movie {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            padding: 1.5rem;
-            background: #474747;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-        }
-        .fav-movie-img {
-            width: auto; /* Custom width */
-            height: auto; /* Adjust height proportionally */
-            border-radius: 1px; /* Optional styling */
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .reference-item {
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
-        .fav-movie-img:hover {
-            
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Add a shadow on hover */
+        .reference-item:hover {
+            background-color: #555;
         }
-        .projects {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: left;
-            margin-top: 1rem;
-        }
-        .project {
-            background: #333;
-            border: 1px solid #555;
-            border-radius: 10px;
-            padding: 1.3rem;
-            width: 250px;
-            text-align: left;
-            box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
-        }
-        .project img {
-            width: 235px;
-            height: 200px;
-            margin-bottom: .2rem;
-        }
-        .project h3 {
-            margin: 0.2rem 0;
-            color: #ffffff;
-        }
-        .project p {
-            font-size: 0.9rem;
-            color: #ccc;
-            margin-bottom: .5rem;
-        }
+
         .scroll-box {
             background-color: #333; /* Match the theme */
             border: 1px solid #555;
@@ -157,8 +118,6 @@
             overflow-y: auto; /* Enable vertical scrolling */
             border-radius: 10px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-            margin-bottom: 20px;
-            
         }
         .scroll-box::-webkit-scrollbar {
             width: 10px; /* Width of the scrollbar */
@@ -171,26 +130,7 @@
             background: #0ac0f3; /* Scrollbar thumb color */
             border-radius: 10px;
         }
-        iframe {
-            visibility: hidden;
-            width: 862px;
-            height: 200px;
-            border: black; /* Removes iframe borders */
-            display: block; /* Prevents iframe resizing inconsistencies */
-            margin: 0 auto; /* Centers the iframe */
-        }   
-        .iframe-container {
-            width: 862px;
-            height: 200px;
-            overflow: hidden; /* Ensures content stays contained */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            
-        }
-        .game-section {
-            margin-top: 80px; /* Ensures separation from the scroll-box above */
-        }
+
         footer {
             text-align: center;
             padding: 1rem 0;
@@ -239,6 +179,20 @@
         .dropdown-content {
             animation: fadeIn 0.3s ease-in-out;
         }
+        .pdf-viewer {
+            width: 90%; /* Take up full width of the right section */
+            height: 370px; /* Increase height to make the PDF viewer larger */
+            border: none; /* Optional: Remove any border */
+            background-color: #555; /* Placeholder background color */
+            
+        }
+        @media (max-width: 768px) {
+            .pdf-viewer {
+                height: 500px; /* Smaller height for mobile devices */
+            }
+        }
+
+
 
         @keyframes fadeIn {
             from {
@@ -259,18 +213,18 @@
     </header>
     <nav>
         
-        <a href="index.html">Home</a>
-        <a href="#">About</a>
+        <a href="#">Home</a>
+        <a href="https://reliableyeti.github.io/YetiWeb/about.html">About</a>
 
         <div class="dropdown">
-            <a href="#">Topics</a>
+            <a href="#">Papers</a>
             <div class="dropdown-content">
-                <a href="#topic1">Python</a>
+                <a href="#topic1">Info Security</a>
                 <a href="#topic2">Networking</a>
                 <a href="#topic3">Forensics</a>
                 <a href="#topic4">Windows</a>
                 <a href="#topic5">Linux</a>
-                <a href="#topic6">Mac</a>
+                
             
             </div>
         </div>
@@ -285,6 +239,7 @@
                 <a href="#topic5">Enterprise A</a>    
             </div>
         </div>
+        
         <a href="#">Websites</a>
         <a href="#">Books</a>
 
@@ -301,108 +256,51 @@
     <div class="container">
         <!-- Left Section -->
         <div class="left-section">
-            <div class="iframe-container ">
-                <iframe src="https://reliableyeti.github.io/YetiWeb/build/web/index.html" 
-                        width="862" 
-                        height="200" 
-                        scrolling="no" 
-                        tabindex="-1">
-                </iframe>   
+            <h2>Quick References</h2>
+            <div class="scroll-box">
+                <p class="reference-item" data-pdf="quick_ref\pygbag.pdf">1. Pygame to Web Game</p>
+                <p class="reference-item" data-pdf="quick_ref\Path.pdf">2. Edit System's PATH environment Variable</p>
+                <p class="reference-item" data-pdf="quick_ref\comingsoon.pdf">4. Short Cuts</p>
+                <p class="reference-item" data-pdf="quick_ref\comingsoon.pdf">5. Linux Commands</p>
+                <p class="reference-item" data-pdf="quick_ref\comingsoon.pdf">6. Windows Commands</p>
+                <p class="reference-item" data-pdf="quick_ref\comingsoon.pdf">7. Forensic Tools</p>
             </div>
-            
-            <section class="projects">
-                <div class="project">
-                    <img src="me.png" alt="Project Icon">
-                    <h3>Lindsay Saunders</h3>
-                    <p>From Westerly, RI</p>
-                    <p>Currently live in Las Cruces, NM</p>
-                    
-                </div>
-                <div class="project">
-                    <img src="libra.png" alt="Project Icon">
-                    <h3>September Libra</h3>
-                    <p></p>
-                    
-                </div>
-                
-            </section>
-            <section>
-                <h2>About Me</h2>
-                <div class="scroll-box">
-                    <p>Lindsay Saunders<br><br>
-                
-                        Information & Communication Technologies<br> 
-                        New Mexico State University<br><br>
-                        
-                        Lindsay graduated from New Mexico State University in 2024 with a Bachelor of Engineering in Information Communication Technology and previously earned a Bachelor of Science in Communication Information Systems from Central New Mexico College in 2022.<br><br> 
-                        
-                        
-                        Education<br>
-                        Bachelor of Engineering<br>
-                        Major Information Communication Technology<br>
-                        New Mexico State University, 2024<br><br>
-                        
-                        Bachelor of Science<br>
-                        Major Communication Information Systems<br>
-                        Central New Mexico College, 2022<br><br>
-                        
-                        Certifications<br><br>
-                        
-                        CompTIA A+<br>
-                        Networking +<br>
-                        Security +<br>
-                        Linux +<br>
-                        </p>
-                </div>
-            </section>
-            
         </div>
 
         <!-- Right Section -->
         <div class="right-section">
-            <h2>Hobbies</h2>
-            <div class="update-item">
-                <img src="ableton.png" alt="The Matrix">
-                <div>
-                    <strong>Music Production:</strong> 
-                    <p>Guitar is my main instrument</p>
-                    <p>Decent with the piano</p>
-                </div>
-            </div>
-            <div class="update-item">
-                <img src="programming.png" alt="The Shining">
-                <div>
-                    <strong>Programming:</strong> 
-                    <p>Game Development:</p>
-                    <p>-Python</p>
-                    <p>-GML</p>
-                </div>
-            </div>
-            <div class="fav-movie"> 
-                <a href="https://letterboxd.com/reliableyeti/" target="_blank">
-                    <img class="fav-movie-img" src="fav_movie.png" alt="Favorite Movie">
-                </a>
-            </div>
-            <div class="update-item">
-                <strong>Fav Book:</strong> Completed Python Game Development Project
-            </div>
+            <iframe class="pdf-viewer" id="pdfViewer" src=""></iframe>
         </div>
-    </div>
+    </div>     
+
     <footer>
         <p>&copy; 2024 My Website. All rights reserved.</p>
     </footer>
     <script>
-        window.addEventListener('load', function () {
-            const iframe = document.querySelector('iframe');
-            setTimeout(() => {
-                iframe.style.visibility = 'visible';
-            }, 100); // Adjust delay as needed
-        });
-        window.history.scrollRestoration = "manual";
-        window.addEventListener('load', function () {
-            window.scrollTo(0, 0);
+        document.addEventListener("DOMContentLoaded", function () {
+            const referenceItems = document.querySelectorAll(".reference-item");
+            const pdfViewer = document.getElementById("pdfViewer");
+
+            // Add click event listeners to the reference items
+            referenceItems.forEach(item => {
+                item.addEventListener("click", function () {
+                    const pdfFile = this.getAttribute("data-pdf"); // Get the PDF file from data-pdf attribute
+                    if (pdfFile) {
+                        pdfViewer.src = pdfFile; // Set the iframe source to the selected PDF file
+                    }
+                });
+            });
+
+            // Load the first PDF by default
+            const firstPdf = referenceItems[0]?.getAttribute("data-pdf");
+            if (firstPdf) {
+                pdfViewer.src = firstPdf;
+            }
         });
     </script>
+    
+    
+    
     
 </body>
 </html>
