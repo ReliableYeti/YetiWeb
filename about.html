@@ -122,7 +122,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 2rem;
-            justify-content: center;
+            justify-content: left;
             margin-top: 1rem;
         }
         .project {
@@ -131,7 +131,7 @@
             border-radius: 10px;
             padding: 1.3rem;
             width: 250px;
-            text-align: center;
+            text-align: left;
             box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
         }
         .project img {
@@ -148,19 +148,6 @@
             color: #ccc;
             margin-bottom: .5rem;
         }
-        .project button {
-            background: #0ac0f3;
-            color: #000;
-            border: none;
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        .project button:hover {
-            background: #ffffff;
-            animation: glitch 0.5s linear;
-        }
         .scroll-box {
             background-color: #333; /* Match the theme */
             border: 1px solid #555;
@@ -170,6 +157,7 @@
             overflow-y: auto; /* Enable vertical scrolling */
             border-radius: 10px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
             
         }
         .scroll-box::-webkit-scrollbar {
@@ -198,9 +186,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            
         }
         .game-section {
-            margin-top: 10px; /* Ensures separation from the scroll-box above */
+            margin-top: 80px; /* Ensures separation from the scroll-box above */
         }
         footer {
             text-align: center;
@@ -286,7 +275,7 @@
             </div>
         </div>
 
-        <a href="#">Projects</a>
+        <a href="projects.html">Projects</a>
         <a href="#">Websites</a>
         <a href="#">Books</a>
 
@@ -303,6 +292,14 @@
     <div class="container">
         <!-- Left Section -->
         <div class="left-section">
+            <div class="iframe-container ">
+                <iframe src="https://reliableyeti.github.io/YetiWeb/build/web/index.html" 
+                        width="862" 
+                        height="200" 
+                        scrolling="no" 
+                        tabindex="-1">
+                </iframe>   
+            </div>
             
             <section class="projects">
                 <div class="project">
@@ -315,7 +312,7 @@
                 <div class="project">
                     <img src="libra.png" alt="Project Icon">
                     <h3>September Libra</h3>
-                    <p>A brief description of the project goes here.</p>
+                    <p></p>
                     
                 </div>
                 
@@ -349,14 +346,6 @@
                         </p>
                 </div>
             </section>
-            <div class="iframe-container">
-                <iframe src="https://reliableyeti.github.io/YetiWeb/build/web/index.html" 
-                        width="862" 
-                        height="200" 
-                        scrolling="no" 
-                        tabindex="-1">
-                </iframe>   
-            </div>
             
         </div>
 
@@ -399,6 +388,10 @@
             setTimeout(() => {
                 iframe.style.visibility = 'visible';
             }, 100); // Adjust delay as needed
+        });
+        window.history.scrollRestoration = "manual";
+        window.addEventListener('load', function () {
+            window.scrollTo(0, 0);
         });
     </script>
     
